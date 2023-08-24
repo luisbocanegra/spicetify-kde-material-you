@@ -4,11 +4,12 @@ import json
 import configparser
 import os
 import time
+from pathlib import Path
 
-MATERIAL_YOU_JSON_FILE = "/tmp/kde-material-you-colors.json"
-SPICETIFY_COLORS_FILE = "/home/luis/.config/spicetify/Themes/Lightly/color.ini"
-MATERIAL_YOU_CONFIG = "/home/luis/.config/kde-material-you-colors/config.conf"
 HOME = str(Path.home())
+MATERIAL_YOU_JSON_FILE = "/tmp/kde-material-you-colors.json"
+SPICETIFY_COLORS_FILE = HOME + "/.config/spicetify/Themes/MaterialYou/color.ini"
+MATERIAL_YOU_CONFIG = HOME + "/.config/kde-material-you-colors/config.conf"
 KDE_GLOBALS = HOME + "/.config/kdeglobals"
 
 
