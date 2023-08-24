@@ -1,0 +1,27 @@
+
+
+
+
+
+
+/* kill Home gradient */
+/* 
+* .main-home-homeHeader -> Home
+* .main-actionBarBackground-background -> Gradienent in artist page 
+*/
+.main-home-homeHeader,
+.main-actionBarBackground-background{
+    background-color: unset !important;
+    background-image: unset !important;
+}
+
+
+/* TODO: investigate these */
+
+.x-entityHeader-overlay,
+.x-actionBarBackground-background,
+.main-entityHeader-overlay,
+.main-entityHeader-backgroundColor {
+    background-color: unset !important;
+    background-image: unset !important;
+}

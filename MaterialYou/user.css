@@ -1,0 +1,693 @@
+:root {
+    --player-bar-height: 70px;
+    font-family: "NotoSans Nerd Font" !important;
+}
+
+/*   Headers   ########################################################*/
+
+/* allow positioning of header container */
+.under-main-view>div:has(.main-entityHeader-background) {
+    margin-top: 0px;
+    display: flex;
+}
+
+.main-view-container__scroll-node-child-spacer {
+    /* height: 64px; */
+    position: sticky;
+    top: 0;
+}
+
+/* .under-main-view {
+    height: 342px !important;
+} */
+
+/* header with image */
+.main-entityHeader-gradient{
+    /* width: auto !important; */
+    position:inherit;
+    /* display: inline-block; */
+    margin: 0px 8px 0 0px !important;
+    /* width: auto !important; */
+    /* border: 1px solid blue !important; */
+    border-radius: 20px !important;
+    /* opacity:  0; */
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* hide second header box */
+.main-entityHeader-overlay {
+    display: none;
+}
+
+.main-entityHeader-container,.main-entityHeader-nonWrapped,.main-entityHeader-withBackgroundImage,.main-entityHeader-background {
+    height: 20vh !important;
+    max-height: 500px !important;
+    min-height: 330px !important;
+}
+
+/* Kill Gradients
+* .main-home-homeHeader -> Home
+* .main-entityHeader-overlay -> Artist / Playlist header
+* .main-actionBarBackground-background -> Artist / Playlist header (below)
+*/
+.main-home-homeHeader,
+.main-actionBarBackground-background {
+    background-color: unset !important;
+    background-image: unset !important;
+}
+
+
+/* Header styling */
+
+/* Make it transparent and use card color for colored header 
+.main-entityHeader-withBackgroundImage
+*/
+.main-entityHeader-background,.main-entityHeader-backgroundColor { 
+    -webkit-transform: unset !important;
+    transform: unset !important;
+    opacity: 1 !important;
+    border-radius: 6px !important;
+    background-color: var(--spice-card) !important;
+    /* border: 1px solid var(--spice-button); */
+}
+
+.main-entityHeader-withBackgroundImage { 
+    border-radius: 6px !important;
+    background-color: var(--spice-card) !important;
+    /* background-color: color-mix(in srgb, blue 100%, red) !important; */
+    /* border: solid 1px var(--spice-button); */
+}
+
+.aaadd {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-attachment: scroll;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    contain: strict;
+    content-visibility: auto;
+    background-color: var(--spice-card) !important;
+    opacity: .5 !important;
+    background-blend-mode:soft-light;
+    /* mix-blend-mode:lighten; */
+    /* filter: blur(5px) !important; */
+    /* box-shadow: inset 5em 1em gold; */
+    /* border-radius: 6px !important; */
+    /* box-shadow: inset 0px 0px 2px 2px var(--spice-button); */
+    /* border: solid 1px var(--spice-button); */
+}
+
+.main-entityHeader-headerText {
+    z-index: 1;
+}
+
+/* Top bar styling */
+
+/* Top bar (scrolled views) */
+.Root__top-bar>.main-topBar-container>.main-topBar-background,
+.Root__top-bar>.main-topBar-container>.main-topBar-background>.main-topBar-overlay{
+    background-color: var(--spice-main) !important;
+}
+
+/* Top bar left buttons */
+.main-topBar-historyButtons .main-topBar-button,
+.queue-tabBar-moreButtonActive,
+.reddit-tabBar-headerItem.reddit-tabBar-active,
+.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
+    border-radius: 5px;
+    
+    color: var(--spice-text);
+    background-color: var(--spice-card) !important;
+    height: 32px;
+    width: 32px;
+    margin-right: 4px !important;
+    align-content: center;
+    align-items: center;
+}
+
+.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
+    border-radius: 5px;
+    
+    color: var(--spice-text);
+    background-color: var(--spice-button) !important;
+    height: 32px;
+    width: 32px;
+    margin-right: 4px !important;
+    align-content: center;
+    align-items: center;
+}
+
+/* Top bar middle buttons */
+.queue-tabBar-active,.reddit-tabBar-active,.lyrics-tabBar-active {
+    border-radius: 5px;
+    background-color: var(--spice-button);
+    color: var(--spice-main) !important;
+    height: 32px;
+    padding: 0px 8px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+
+.optionsMenu-dropBox>svg {
+    margin-top: 2px;
+}
+
+.queue-tabBar-moreButton,
+.reddit-tabBar-headerItem.reddit-tabBar-active,
+.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
+    width: unset !important;
+    display:inline-flex;
+    padding: 0px 8px;
+    align-content: center;
+    align-items: center;
+}
+
+
+.queue-tabBar-header {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+/* Top bar right buttons */
+/* User button */
+.main-userWidget-box {
+    /* border-radius: 5px; */
+    background-color: var(--spice-card) !important;
+}
+
+/* Status indicator */
+.main-topBarStatusIndicator-hasTooltip {
+    height: 32px;
+    width: 32px;
+    background-color: var(--spice-button);
+    color: var(--spice-main) !important;
+}
+
+/* Search bar */
+.x-searchInput-searchInputInput {
+    border-radius: 5px;
+    height: 32px;
+    color: var(--spice-subtext) !important;
+    background-color: var(--spice-card) !important;
+    
+}
+
+
+
+.x-searchInput-searchInputInput::placeholder {
+    color: var(--spice-subtext) !important;
+    opacity: .5;
+}
+
+.x-searchInput-searchInputSearchIcon,
+.x-searchInput-searchInputClearButton {
+    color: var(--spice-text) !important;
+}
+
+.x-searchInput-searchInputSearchIcon>svg,
+.x-searchInput-searchInputClearButton>svg {
+    height: 18px !important;
+    width: 18px !important;
+}
+
+
+/*   Cards   #################################################################*/
+
+/* Cards subtext color */
+.main-card-cardMetadata>.main-cardSubHeader-root {
+    color: var(--spice-subtext);
+}
+
+
+/*   Nabvar left   ###########################################################*/
+
+
+/* Nabvar top */
+/* Home - New Releases category*/
+
+
+.main-navBar-navBar{
+    padding-top: 10px !important;
+}
+
+.main-navBar-entryPoints{
+    padding-top: 0px !important;
+}
+
+
+.main-navBar-navBarLinkActive,
+.main-collectionLinkButton-selected.active {
+    background: var(--spice-card);
+    border-radius: 6px !important;
+    color: var(--spice-button);
+}
+
+.main-navBar-navBarLink>*,
+.main-collectionLinkButton-collectionLinkButton>*{
+    color: var(--spice-subtext) !important;
+    opacity: 1 !important;
+}
+
+.main-navBar-navBarLinkActive:hover,
+.main-navBar-navBarLink:hover>*,
+.main-navBar-navBarLink:active,
+.main-collectionLinkButton-collectionLinkButton:hover>*,
+.main-collectionLinkButton-collectionLinkButton.active>*,
+.main-navBar-navBarLinkActive>* {
+    color: var(--spice-button) !important;
+}
+
+
+
+
+/* Disable liked songs icon gradient and follow active/hover style*/
+.main-collectionLinkButton-collectionLinkButton .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon {
+    background: var(--spice-subtext) !important;
+}
+
+.main-collectionLinkButton-collectionLinkButton:hover .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon,
+.main-collectionLinkButton-collectionLinkButton.active .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon {
+    background: var(--spice-button) !important;
+}
+
+.main-likedSongsButton-likedSongsIcon>svg>path {
+    fill: var(--spice-main) !important;
+}
+
+/* Kill Horizontal divider gradient */
+.main-rootlist-rootlistDividerGradient {
+    display: none;
+}
+
+.main-rootlist-rootlistDivider {
+    margin-left: 8px !important;
+    margin-right: 10px !important;
+    /* margin:unset !important; */
+}
+
+
+/* Nabvar bottom */
+/* Playlists & folders */
+
+/* bottom of playlist list */
+/* .main-rootlist-wrapper:last-child {
+    margin-bottom: 8px !important;
+} */
+
+.main-rootlist-rootlistItem {
+    padding-left: 8px !important;
+    padding-right: 10px !important;
+}
+
+.main-rootlist-rootlistItemLink{
+    padding: 0 10px;
+    /* height: 40px; */
+}
+
+.main-rootlist-rootlistItem:hover>a>*{
+    color: var(--spice-button);
+}
+
+.main-rootlist-rootlistItem>a:current>*{
+    color: var(--spice-button) !important;
+}
+
+
+
+
+/* Selected Playlist  */
+
+.main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive {
+    border-radius: 6px;
+    background: var(--spice-card);
+    color: var(--spice-button);
+}
+
+/* Playing playlist status (right icon) */
+.main-rootlist-statusIcons>button,
+.main-rootlist-expandArrow>span {
+    color: var(--spice-button);
+    --button-size:18px !important;
+    /* margin: 16px !important; */
+}
+
+.main-rootlist-statusIcons>button>svg,
+.main-rootlist-expandArrow>span>svg {
+    height: 18px !important;
+    width: 18px !important;
+    /* margin: 16px !important; */
+    
+}
+
+.main-rootlist-statusIcons>button,.main-rootlist-expandArrow>span {
+    margin: 2px !important;
+    border-radius: 500px;
+    height: 24px !important;
+    width:24px !important;
+    background: var(--spice-card) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* margin: 16px !important; */
+}
+
+.main-rootlist-statusIcons,.main-rootlist-expandArrow>span {
+    margin-inline-start: 0px;
+    border-radius: 6px;
+    background-color: unset !important;
+    /* margin: 16px !important; */
+}
+
+.main-rootlist-expandArrow>span {
+    /* margin-inline-start: 0px;
+    border-radius: 6px; */
+    border-radius: 6px;
+    background: var(--spice-card) !important;
+}
+
+.main-rootlist-statusIcons{
+    /* margin-inline-start: 0px;
+    border-radius: 6px; */
+    border-radius: 6px;
+    /* background: var(--spice-card) !important; */
+    /* margin: 16px !important; */
+}
+
+.main-rootlist-expandArrow{
+    transform-origin: center !important;
+}
+
+.main-rootlist-expandArrowActive {
+    transform-origin: center !important;
+}
+
+.main-rootlist-expandArrow {
+    /* background-color: green; */
+    border-radius: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* playlist play pause */
+.main-rootlist-statusIcons>button/*[aria-label="Pause"]*/ {
+    color: var(--spice-button);
+}
+
+/* Active (playing) Playlist text */
+.main-rootlist-rootlistItemLink:has(+.main-rootlist-statusIcons>button)>span {
+    color: var(--spice-button);
+    font-weight: bold;
+}
+
+.main-rootlist-rootlistItemLink:has(+.main-rootlist-statusIcons>button,+.main-rootlist-expandArrow) {
+    margin-right: 4px !important;
+}
+
+
+
+/* Scrollbar */
+
+
+.os-theme-spotify>.os-scrollbar-vertical {
+    padding: 0px !important;
+    width: 20px !important;
+}
+
+.os-scrollbar-track {
+    height: 100%;
+    pointer-events: auto;
+    width: 10px !important;
+}
+
+.os-scrollbar-handle {
+    width: 40%;
+    right: 1px !important;
+    left: 14px !important;
+    border-radius: 50px !important;
+    opacity: 0.2;
+    background: var(--spice-subtext) !important;
+}
+
+
+.os-theme-spotify>.os-scrollbar-vertical>.os-scrollbar-track>.os-scrollbar-handle:hover {
+    
+    background: var(--spice-subtext) !important;
+    opacity: 0.8;
+}
+
+.os-theme-spotify>.os-scrollbar-vertical>.os-scrollbar-track>.os-scrollbar-handle:active {
+    background: var(--spice-button) !important;
+    opacity: 1;
+}
+
+
+
+
+
+
+/* Playbar*/
+
+
+/* .Root__now-playing-bar {
+    background-color: var(--spice-main);
+    grid-area: now-playing-bar;
+    width: 100%;
+    z-index: 4;
+} */
+
+.main-nowPlayingBar-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    background-color: var(--spice-main);
+    border-top: 0px solid var(--spice-divider);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: auto;
+    /* min-width: 620px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 0px;
+}
+
+
+/* Player bar */
+
+.main-nowPlayingBar-nowPlayingBar {
+    height: var(--player-bar-height);
+    background-color: var(--spice-player);
+    padding: 0 8px;
+    margin: 0px 8px 8px 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+
+.cover-art .cover-art-image {
+    background-color: var(--spice-sidebar);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.cover-art.shadow {
+    -webkit-box-shadow: 0 0 4px rgba(var(--spice-rgb-shadow), .3);
+    box-shadow: 0 0 4px rgba(var(--spice-rgb-shadow), .3);
+    border-radius: 8px;
+}
+
+
+[dir=ltr] .main-nowPlayingWidget-coverExpanded {
+    -webkit-transform: translateX(-72px) !important;
+    transform: translateX(-72px) !important;
+}
+
+.main-nowPlayingWidget-coverExpanded>.main-trackInfo-container {
+    margin-left: 18px !important;
+}
+
+/* Expanded cover */
+
+.Foyk_HJx16yh22JYmQ56:has(.main-coverSlotExpanded-container) {
+    overflow: hidden;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+    border-radius: 6px;
+}
+
+.player-controls__buttons--new-icons {
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+/* Main view */
+/* .os-host .os-host-foreign .os-theme-spotify .os-host-resize-disabled .os-host-scrollbar-horizontal-hidden .main-view-container__scroll-node .os-host-transition .os-host-overflow .os-host-overflow-y {
+    margin: 8px !important;
+} */
+
+/* .os-host-overflow,.os-host-overflow-y {
+    margin: 8px !important;
+    border-radius: 6px !important;
+
+} */
+
+
+/* .main-topBar-container {
+    padding: 36px 20px;
+} */
+
+/* .main-view-container .os-host .os-padding {
+    margin-top: 8px;
+    margin-right: 8px;
+    border-radius: 6px;
+} */
+
+/* .under-main-view {
+    margin: 8px !important;
+    border-radius: 6px;
+} */
+
+
+/* Pages padding */
+/* .main-view-container__scroll-node-child .contentSpacing:has(.new-releases-header,.collection-collection-header,.main-gridContainer-gridContainer) {
+    padding-right: 0px !important;
+    padding-left: 8px !important;
+} */
+
+/* .main-view-container__scroll-node-child-spacer {
+    height: 56px;
+} */
+
+
+/* Friends activity bar */
+
+.Root__right-sidebar>* {
+    border: 1px solid red;
+}
+
+
+
+/* .main-entityHeader-withBackgroundImage {
+    background-color: rgba(var(--spice-rgb-player), 0.1);
+    border: 1px solid green;
+    border-radius: 0px;
+    margin-right: 10px;
+    max-width: 50% !important;
+    max-height: 50% !important;
+    width: 50%;
+    height: 50%;
+    margin: 4px;
+} */
+
+/* .main-entityHeader-gradient {
+    border: 1px solid blue;
+    width: 100%;
+    border-radius: 10px;
+    margin: 4px; */
+/* }s */
+
+
+/* Make main content cover the header */
+.main-view-container>.os-host {
+    position: absolute;
+    top   : 0px;
+    left  : 0;
+    bottom: 0;
+    right : 0px;
+    /* height: 100%; */
+    /* border-radius: 20px; */
+}
+
+ .main-view-container>.os-host>div>div {
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+.main-view-container {
+    margin-top: 8px;
+}
+
+/* .main-view-container__scroll-node-child>main>div {
+    margin-right: 8px;
+
+} */
+
+/* :root {
+    border: 1px solid rgba(148, 148, 248, 0.486);
+} */
+
+
+
+/* Lyrics background */
+
+.lyrics-lyricsContainer-LyricsContainer,.lyrics-lyrics-container {
+    margin-bottom: -78px !important;
+    margin-top: -64px !important;
+    height: calc(100vh - 87px) !important;
+}
+
+.lyrics-lyricsContainer-LyricsBackground {
+    border-radius: 6px !important;
+    margin: 0;
+}
+
+.lyrics-lyrics-container>div {
+    border-radius: 6px !important;
+}
+
+.lyrics-lyricsContainer-SyncedLyricsPage {
+    margin: 0;
+    border-radius: 30px;
+}
+
+/* .main-entityHeader-background,.main-entityHeader-gradient {
+    border: 1px solid yellow;
+    background-size:50%;
+    border-radius: 30px !important;
+    margin: 4px;
+    height: 10% !important;
+    contain: unset;
+    padding: 10%;
+    background-position: 50% 50% !important;
+
+} */
+
+/* .under-main-view {
+    border: 1px dotted magenta;
+    width: 100%;
+    background-color: rgba(65, 65, 65, 0.438);
+    margin: 2px;
+    display: flex;
+    min-height: 330px !important;
+}
+*/
+/* .os-host-overflow,.os-host-overflow-y {
+    display:none !important;
+}  */
+
+/* * {
+    border: 1px solid rgba(102, 255, 0, 0.151) !important;
+} */

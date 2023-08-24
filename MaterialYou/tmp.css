@@ -1,0 +1,84 @@
+/* main view  */
+
+/* .main-view-container{
+    margin-top: 64px;
+} */
+/* 
+.Root__main-view{
+    margin-top: 8px;
+} */
+
+/* .Root__top-container {
+    padding-top: 8px;
+} */
+
+/* * {
+    outline: 1px solid #67ff7438;
+} */
+
+.Root__main-view .os-host-scrollbar-horizontal-hidden .os-padding
+{
+
+    margin: 0px 8px 0px 0px;
+    border-radius: 6px;
+    padding-bottom: 0px !important;
+}
+
+.lyrics-lyrics-background {
+    border-radius: 6px;
+    /* margin-top: 64px !important; */
+}
+
+.main-view-container__scroll-node {
+    margin-top: 64px !important;
+}
+
+.main-view-container__scroll-node-child-spacer {
+    height: 0px !important;
+}
+
+.search-searchBrowse-SearchBrowse,.search-searchBrowse-SearchBrowse>div,.collection-collection-header,.reddit-header,.new-releases-header {
+    margin-top: 0px !important;
+}
+
+.under-main-view {
+    margin: 8px !important;
+}
+
+/* .main-view-container__scroll-node {
+    border-radius: 6px;
+} */
+/* 
+.main-view-container {
+    padding: 8px 8px 0px 8px;
+} */
+
+.main-home-content {
+    padding-top: 8px !important;
+    padding-left: 0px;
+    padding-right: 0px;
+    /* padding-bottom: 0px;
+    margin-bottom: 0px; */
+}
+
+/* .contentSpacing {
+    padding: 0px !important;
+} */
+
+
+/* .lyrics-lyrics-container {
+    height: calc(100vh - 45px) !important;
+} */
+
+/* :root {
+    margin-top: 8px;
+} */
+
+/* Pages padding */
+.main-view-container__scroll-node-child .contentSpacing:has(.new-releases-header,.collection-collection-header,.main-gridContainer-gridContainer) {
+    padding: 0px !important;
+}
+
+.Root__right-sidebar>* {
+    border: 1px solid red;
+}
