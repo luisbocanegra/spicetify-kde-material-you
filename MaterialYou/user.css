@@ -1,693 +1,412 @@
-:root {
+* {
+    font-family: "Inter" "Noto Sans", sans-serif !important;
+}
+
+:root,
+.encore-dark-theme,
+.encore-light-theme,
+.encore-inverted-light-set {
     --player-bar-height: 70px;
-    font-family: "NotoSans Nerd Font" !important;
+    --background-base: var(--spice-surface);
+    --background-elevated-base: var(--spice-surface-container-highest);
+    --background-elevated-highlight: var(--spice-surface-container);
+    --background-highlight: var(--spice-surface-container-highest);
+    --background-tinted-base: var(--spice-surface-container-high);
+
+    --currentColor: var(--spice-on-surface);
+    --text-bright-accent: var(--spice-primary);
+    --text-base: var(--spice-on-surface);
+    --text-subdued: var(--spice-on-surface-variant);
+    --essential-subdued: var(--spice-outline);
+    --spice-button: var(--spice-primary);
+    --spice-button-active: var(--spice-primary);
+    --spice-main: var(--spice-surface-container);
+    --spice-card: var(--spice-surface-container);
+    --spice-text: var(--spice-on-surface);
+    --spice-subtext: var(--spice-on-surface-variant);
+    --spice-notification: var(--spice-tertiary);
+
+
+    --chevrons-button-color: var(--spice-surface-container-high);
+    --generic-tooltip-background-color: var(--spice-surface-container);
+
+    --essential-base: var(--spice-primary);
+    --essential-bright-accent: var(--spice-primary);
+    --text-positive: #1ed760;
+    --essential-negative: #ed2c3f;
+    --essential-warning: #ffa42b;
+    --essential-positive: #1ed760;
+    --essential-announcement: #1278f2;
+    --decorative-base: yellow;
+    --decorative-subdued: #292929;
+    font-family: unset;
 }
 
-/*   Headers   ########################################################*/
-
-/* allow positioning of header container */
-.under-main-view>div:has(.main-entityHeader-background) {
-    margin-top: 0px;
-    display: flex;
+.encore-announcement-set {
+    --background-base: var(--spice-surface-container-highest);
 }
 
-.main-view-container__scroll-node-child-spacer {
-    /* height: 64px; */
-    position: sticky;
-    top: 0;
-}
-
-/* .under-main-view {
-    height: 342px !important;
+/* .encore-inverted-light-set {
+    --background-base: var(--spice-primary);
 } */
 
-/* header with image */
-.main-entityHeader-gradient{
-    /* width: auto !important; */
-    position:inherit;
-    /* display: inline-block; */
-    margin: 0px 8px 0 0px !important;
-    /* width: auto !important; */
-    /* border: 1px solid blue !important; */
-    border-radius: 20px !important;
-    /* opacity:  0; */
-    width: 0 !important;
-    height: 0 !important;
+/* .encore-dark-theme .encore-bright-accent-set {
+    --background-base: var(--spice-primary);
+    --background-highlight: var(--spice-primary);
+} */
+
+/* .encore-dark-theme {
+    --background-base: var(--spice-primary);
+} */
+
+/*
+Background
+.Root__top-container    -> bg
+.Root__globalNav        -> top bar
+.Root__now-playing-bar  -> bottom area below the playing container
+.Root__nav-bar          -> left side bar
+
+*/
+
+.Root__top-container,
+.Root__globalNav,
+.Root__now-playing-bar,
+.Root__nav-bar,
+.main-yourLibraryX-libraryContainer {
+    background-color: var(--spice-surface-container);
 }
 
-/* hide second header box */
-.main-entityHeader-overlay {
+.main-yourLibraryX-libraryContainer *,
+.Root__right-sidebar * {
+    box-shadow: unset;
+}
+
+/* black bar on the left of hovered right side bar */
+.qnaFIKUJ9oUIkN97.SC_eWQl28srvyLED * {
+    background-color: var(--spice-surface);
+}
+
+
+/* 
+Kill gradients
+*/
+
+.main-home-homeHeader {
+    background-image: none;
     display: none;
 }
 
-.main-entityHeader-container,.main-entityHeader-nonWrapped,.main-entityHeader-withBackgroundImage,.main-entityHeader-background {
-    height: 20vh !important;
-    max-height: 500px !important;
-    min-height: 330px !important;
+/* home play lists grid overflow dark gradient */
+.search-searchCategory-contentArea::before,
+.search-searchCategory-contentArea::after {
+    background: none;
 }
 
-/* Kill Gradients
-* .main-home-homeHeader -> Home
-* .main-entityHeader-overlay -> Artist / Playlist header
-* .main-actionBarBackground-background -> Artist / Playlist header (below)
+/* Playlist header gradient
+.main-actionBarBackground-background > below header
+.main-entityHeader-backgroundColor > color header
 */
-.main-home-homeHeader,
-.main-actionBarBackground-background {
-    background-color: unset !important;
-    background-image: unset !important;
-}
 
-
-/* Header styling */
-
-/* Make it transparent and use card color for colored header 
-.main-entityHeader-withBackgroundImage
-*/
-.main-entityHeader-background,.main-entityHeader-backgroundColor { 
-    -webkit-transform: unset !important;
-    transform: unset !important;
-    opacity: 1 !important;
-    border-radius: 6px !important;
-    background-color: var(--spice-card) !important;
-    /* border: 1px solid var(--spice-button); */
-}
-
-.main-entityHeader-withBackgroundImage { 
-    border-radius: 6px !important;
-    background-color: var(--spice-card) !important;
-    /* background-color: color-mix(in srgb, blue 100%, red) !important; */
-    /* border: solid 1px var(--spice-button); */
-}
-
-.aaadd {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-attachment: scroll;
-    background-position: 50% 20%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    contain: strict;
-    content-visibility: auto;
-    background-color: var(--spice-card) !important;
-    opacity: .5 !important;
-    background-blend-mode:soft-light;
-    /* mix-blend-mode:lighten; */
-    /* filter: blur(5px) !important; */
-    /* box-shadow: inset 5em 1em gold; */
-    /* border-radius: 6px !important; */
-    /* box-shadow: inset 0px 0px 2px 2px var(--spice-button); */
-    /* border: solid 1px var(--spice-button); */
-}
-
-.main-entityHeader-headerText {
-    z-index: 1;
-}
-
-/* Top bar styling */
-
-/* Top bar (scrolled views) */
-.Root__top-bar>.main-topBar-container>.main-topBar-background,
-.Root__top-bar>.main-topBar-container>.main-topBar-background>.main-topBar-overlay{
-    background-color: var(--spice-main) !important;
-}
-
-/* Top bar left buttons */
-.main-topBar-historyButtons .main-topBar-button,
-.queue-tabBar-moreButtonActive,
-.reddit-tabBar-headerItem.reddit-tabBar-active,
-.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
-    border-radius: 5px;
-    
-    color: var(--spice-text);
-    background-color: var(--spice-card) !important;
-    height: 32px;
-    width: 32px;
-    margin-right: 4px !important;
-    align-content: center;
-    align-items: center;
-}
-
-.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
-    border-radius: 5px;
-    
-    color: var(--spice-text);
-    background-color: var(--spice-button) !important;
-    height: 32px;
-    width: 32px;
-    margin-right: 4px !important;
-    align-content: center;
-    align-items: center;
-}
-
-/* Top bar middle buttons */
-.queue-tabBar-active,.reddit-tabBar-active,.lyrics-tabBar-active {
-    border-radius: 5px;
-    background-color: var(--spice-button);
-    color: var(--spice-main) !important;
-    height: 32px;
-    padding: 0px 8px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-}
-
-
-.optionsMenu-dropBox>svg {
-    margin-top: 2px;
-}
-
-.queue-tabBar-moreButton,
-.reddit-tabBar-headerItem.reddit-tabBar-active,
-.lyrics-tabBar-headerItemLink.lyrics-tabBar-active {
-    width: unset !important;
-    display:inline-flex;
-    padding: 0px 8px;
-    align-content: center;
-    align-items: center;
-}
-
-
-.queue-tabBar-header {
-    display: flex;
-    align-content: center;
-    align-items: center;
-}
-
-/* Top bar right buttons */
-/* User button */
-.main-userWidget-box {
-    /* border-radius: 5px; */
-    background-color: var(--spice-card) !important;
-}
-
-/* Status indicator */
-.main-topBarStatusIndicator-hasTooltip {
-    height: 32px;
-    width: 32px;
-    background-color: var(--spice-button);
-    color: var(--spice-main) !important;
-}
-
-/* Search bar */
-.x-searchInput-searchInputInput {
-    border-radius: 5px;
-    height: 32px;
-    color: var(--spice-subtext) !important;
-    background-color: var(--spice-card) !important;
-    
-}
-
-
-
-.x-searchInput-searchInputInput::placeholder {
-    color: var(--spice-subtext) !important;
-    opacity: .5;
-}
-
-.x-searchInput-searchInputSearchIcon,
-.x-searchInput-searchInputClearButton {
-    color: var(--spice-text) !important;
-}
-
-.x-searchInput-searchInputSearchIcon>svg,
-.x-searchInput-searchInputClearButton>svg {
-    height: 18px !important;
-    width: 18px !important;
-}
-
-
-/*   Cards   #################################################################*/
-
-/* Cards subtext color */
-.main-card-cardMetadata>.main-cardSubHeader-root {
-    color: var(--spice-subtext);
-}
-
-
-/*   Nabvar left   ###########################################################*/
-
-
-/* Nabvar top */
-/* Home - New Releases category*/
-
-
-.main-navBar-navBar{
-    padding-top: 10px !important;
-}
-
-.main-navBar-entryPoints{
-    padding-top: 0px !important;
-}
-
-
-.main-navBar-navBarLinkActive,
-.main-collectionLinkButton-selected.active {
-    background: var(--spice-card);
-    border-radius: 6px !important;
-    color: var(--spice-button);
-}
-
-.main-navBar-navBarLink>*,
-.main-collectionLinkButton-collectionLinkButton>*{
-    color: var(--spice-subtext) !important;
-    opacity: 1 !important;
-}
-
-.main-navBar-navBarLinkActive:hover,
-.main-navBar-navBarLink:hover>*,
-.main-navBar-navBarLink:active,
-.main-collectionLinkButton-collectionLinkButton:hover>*,
-.main-collectionLinkButton-collectionLinkButton.active>*,
-.main-navBar-navBarLinkActive>* {
-    color: var(--spice-button) !important;
-}
-
-
-
-
-/* Disable liked songs icon gradient and follow active/hover style*/
-.main-collectionLinkButton-collectionLinkButton .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon {
-    background: var(--spice-subtext) !important;
-}
-
-.main-collectionLinkButton-collectionLinkButton:hover .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon,
-.main-collectionLinkButton-collectionLinkButton.active .main-collectionLinkButton-icon .main-likedSongsButton-likedSongsIcon {
-    background: var(--spice-button) !important;
-}
-
-.main-likedSongsButton-likedSongsIcon>svg>path {
-    fill: var(--spice-main) !important;
-}
-
-/* Kill Horizontal divider gradient */
-.main-rootlist-rootlistDividerGradient {
+.main-actionBarBackground-background,
+.main-entityHeader-backgroundColor {
+    background-image: none;
     display: none;
 }
 
-.main-rootlist-rootlistDivider {
-    margin-left: 8px !important;
-    margin-right: 10px !important;
-    /* margin:unset !important; */
+/* Artist header gradients
+.playlist-playlist-actionBarBackground-background
+*/
+
+.playlist-playlist-actionBarBackground-background {
+    display: none;
+}
+
+/* playlist image header shadow */
+.main-entityHeader-shadow {
+    box-shadow: unset;
 }
 
 
-/* Nabvar bottom */
-/* Playlists & folders */
+/* 
+Floating stuff
+*/
 
-/* bottom of playlist list */
-/* .main-rootlist-wrapper:last-child {
-    margin-bottom: 8px !important;
-} */
-
-.main-rootlist-rootlistItem {
-    padding-left: 8px !important;
-    padding-right: 10px !important;
+/* Tooltip bruh why is this not in root: */
+.main-contextMenu-tippy {
+    --generic-tooltip-background-color: var(--spice-surface-container-highest);
 }
 
-.main-rootlist-rootlistItemLink{
-    padding: 0 10px;
-    /* height: 40px; */
-}
-
-.main-rootlist-rootlistItem:hover>a>*{
-    color: var(--spice-button);
-}
-
-.main-rootlist-rootlistItem>a:current>*{
-    color: var(--spice-button) !important;
+.main-contextMenu-menu {
+    background-color: var(--spice-surface-container-highest);
 }
 
 
+/*
+Controls
+*/
 
-
-/* Selected Playlist  */
-
-.main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive {
-    border-radius: 6px;
-    background: var(--spice-card);
-    color: var(--spice-button);
+input:checked~.x-toggle-indicatorWrapper,
+input:checked:hover:not([disabled], :active)~.x-toggle-indicatorWrapper {
+    background-color: var(--spice-primary);
 }
 
-/* Playing playlist status (right icon) */
-.main-rootlist-statusIcons>button,
-.main-rootlist-expandArrow>span {
-    color: var(--spice-button);
-    --button-size:18px !important;
-    /* margin: 16px !important; */
+input:checked~.x-toggle-indicatorWrapper .x-toggle-indicator {
+    background-color: var(--spice-surface);
 }
 
-.main-rootlist-statusIcons>button>svg,
-.main-rootlist-expandArrow>span>svg {
-    height: 18px !important;
-    width: 18px !important;
-    /* margin: 16px !important; */
-    
+input:hover:not([disabled], :active)~.x-toggle-indicatorWrapper {
+    background-color: var(--spice-outline);
 }
 
-.main-rootlist-statusIcons>button,.main-rootlist-expandArrow>span {
-    margin: 2px !important;
-    border-radius: 500px;
-    height: 24px !important;
-    width:24px !important;
-    background: var(--spice-card) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* margin: 16px !important; */
+.x-toggle-indicatorWrapper {
+    background-color: var(--spice-surface-container-highest);
 }
 
-.main-rootlist-statusIcons,.main-rootlist-expandArrow>span {
-    margin-inline-start: 0px;
-    border-radius: 6px;
-    background-color: unset !important;
-    /* margin: 16px !important; */
+.x-filterBox-filterInput {
+    background-color: var(--spice-surface-container) !important;
 }
 
-.main-rootlist-expandArrow>span {
-    /* margin-inline-start: 0px;
-    border-radius: 6px; */
-    border-radius: 6px;
-    background: var(--spice-card) !important;
+.x-filterBox-filterInputContainer svg {
+    fill: var(--text-subdued) !important;
 }
 
-.main-rootlist-statusIcons{
-    /* margin-inline-start: 0px;
-    border-radius: 6px; */
-    border-radius: 6px;
-    /* background: var(--spice-card) !important; */
-    /* margin: 16px !important; */
+.x-filterBox-filterInput::placeholder {
+    color: var(--spice-on-surface) !important;
+    fill: var(--spice-on-surface) !important;
 }
 
-.main-rootlist-expandArrow{
-    transform-origin: center !important;
+.main-genericButton-button {
+    color: var(--spice-on-surface-variant);
 }
 
-.main-rootlist-expandArrowActive {
-    transform-origin: center !important;
+.main-contextMenu-menuItemButton[role=menuitemradio][aria-checked=true] {
+    color: var(--spice-primary);
 }
 
-.main-rootlist-expandArrow {
-    /* background-color: green; */
-    border-radius: 0px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-contextMenu-menuItemButton {
+    color: var(--spice-on-surface);
 }
 
-
-/* playlist play pause */
-.main-rootlist-statusIcons>button/*[aria-label="Pause"]*/ {
-    color: var(--spice-button);
+.main-contextMenu-menuItemButton:hover,
+.main-contextMenu-menuItemButton[role=link]:hover {
+    background-color: var(--spice-surface-container-high);
 }
 
-/* Active (playing) Playlist text */
-.main-rootlist-rootlistItemLink:has(+.main-rootlist-statusIcons>button)>span {
-    color: var(--spice-button);
-    font-weight: bold;
+.main-contextMenu-menuItemButton[role=link],
+.main-contextMenu-menuItemButton[role=link]:hover {
+    color: var(--spice-tertiary);
 }
 
-.main-rootlist-rootlistItemLink:has(+.main-rootlist-statusIcons>button,+.main-rootlist-expandArrow) {
-    margin-right: 4px !important;
+.x-filterBox-expandButton,
+.x-sortBox-sortDropdown,
+.encore-internal-color-text-subdued {
+    color: var(--text-subdued);
 }
 
+/*
+Playlist track list
+*/
 
-
-/* Scrollbar */
-
-
-.os-theme-spotify>.os-scrollbar-vertical {
-    padding: 0px !important;
-    width: 20px !important;
+.main-trackList-trackListRow {
+    border-radius: 8px;
 }
 
-.os-scrollbar-track {
-    height: 100%;
-    pointer-events: auto;
-    width: 10px !important;
+/* currently playing */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) {
+    background-color: var(--spice-primary-container);
 }
 
-.os-scrollbar-handle {
-    width: 40%;
-    right: 1px !important;
-    left: 14px !important;
-    border-radius: 50px !important;
-    opacity: 0.2;
-    background: var(--spice-subtext) !important;
+/* currently playing text */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) *,
+.main-trackList-trackListRow:focus-within:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) {
+    color: var(--spice-on-primary-container) !important;
+    --text-bright-accent: var(--spice-on-primary-container)
+}
+
+/* currently playing explicit label */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) .x-explicit-label {
+    background-color: var(--spice-surface);
+}
+
+/* currently playing explicit label text */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) .x-explicit-label>span {
+    color: var(--spice-primary) !important;
+}
+
+.main-trackList-trackListRow:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) .x-explicit-label {
+    background-color: var(--spice-tertiary-container) !important;
+}
+
+.main-trackList-trackListRow:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) .x-explicit-label>span {
+    color: var(--spice-on-tertiary-container) !important;
 }
 
 
-.os-theme-spotify>.os-scrollbar-vertical>.os-scrollbar-track>.os-scrollbar-handle:hover {
-    
-    background: var(--spice-subtext) !important;
-    opacity: 0.8;
-}
-
-.os-theme-spotify>.os-scrollbar-vertical>.os-scrollbar-track>.os-scrollbar-handle:active {
-    background: var(--spice-button) !important;
+/* always show Play/pause button */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) .main-trackList-rowImagePlayButton {
     opacity: 1;
 }
 
-
-
-
-
-
-/* Playbar*/
-
-
-/* .Root__now-playing-bar {
-    background-color: var(--spice-main);
-    grid-area: now-playing-bar;
-    width: 100%;
-    z-index: 4;
-} */
-
-.main-nowPlayingBar-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    background-color: var(--spice-main);
-    border-top: 0px solid var(--spice-divider);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: auto;
-    /* min-width: 620px; */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-top: 0px;
+/* hide playing animation */
+.main-trackList-trackListRow:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"]) .main-trackList-rowMarker img {
+    opacity: 0;
 }
 
+/* song in playlist */
 
-/* Player bar */
-
-.main-nowPlayingBar-nowPlayingBar {
-    height: var(--player-bar-height);
-    background-color: var(--spice-player);
-    padding: 0 8px;
-    margin: 0px 8px 8px 8px;
-    border-radius: 6px;
-    margin-top: 8px;
+.main-trackList-trackListRow:hover:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) * {
+    color: var(--spice-primary) !important;
 }
 
-
-.cover-art .cover-art-image {
-    background-color: var(--spice-sidebar);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    border-radius: 4px;
+.main-trackList-trackListRow:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) * {
+    color: var(--spice-on-surface) !important;
 }
 
-.cover-art.shadow {
-    -webkit-box-shadow: 0 0 4px rgba(var(--spice-rgb-shadow), .3);
-    box-shadow: 0 0 4px rgba(var(--spice-rgb-shadow), .3);
-    border-radius: 8px;
+.main-trackList-rowMainContentSubTitle {
+    opacity: 0.6;
 }
 
-
-[dir=ltr] .main-nowPlayingWidget-coverExpanded {
-    -webkit-transform: translateX(-72px) !important;
-    transform: translateX(-72px) !important;
+.main-trackList-trackListRow:hover:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) {
+    background-color: var(--spice-surface-container-highest) !important;
 }
 
-.main-nowPlayingWidget-coverExpanded>.main-trackInfo-container {
-    margin-left: 18px !important;
+.main-trackList-trackListRow.q8suB2R_XkoUyIeZ:not(:has(.main-trackList-rowMarker>img[src*="equaliser-animated-green.gif"])) {
+    background-color: var(--spice-surface-bright);
 }
 
-/* Expanded cover */
-
-.Foyk_HJx16yh22JYmQ56:has(.main-coverSlotExpanded-container) {
-    overflow: hidden;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 8px;
-    border-radius: 6px;
-}
-
-.player-controls__buttons--new-icons {
-    margin-bottom: 6px;
-    margin-top: 6px;
-}
-
-/* Main view */
-/* .os-host .os-host-foreign .os-theme-spotify .os-host-resize-disabled .os-host-scrollbar-horizontal-hidden .main-view-container__scroll-node .os-host-transition .os-host-overflow .os-host-overflow-y {
-    margin: 8px !important;
-} */
-
-/* .os-host-overflow,.os-host-overflow-y {
-    margin: 8px !important;
-    border-radius: 6px !important;
-
-} */
-
-
-/* .main-topBar-container {
-    padding: 36px 20px;
-} */
-
-/* .main-view-container .os-host .os-padding {
-    margin-top: 8px;
-    margin-right: 8px;
-    border-radius: 6px;
-} */
-
-/* .under-main-view {
-    margin: 8px !important;
-    border-radius: 6px;
-} */
-
-
-/* Pages padding */
-/* .main-view-container__scroll-node-child .contentSpacing:has(.new-releases-header,.collection-collection-header,.main-gridContainer-gridContainer) {
-    padding-right: 0px !important;
-    padding-left: 8px !important;
-} */
-
-/* .main-view-container__scroll-node-child-spacer {
-    height: 56px;
-} */
-
-
-/* Friends activity bar */
-
-.Root__right-sidebar>* {
-    border: 1px solid red;
-}
-
-
-
-/* .main-entityHeader-withBackgroundImage {
-    background-color: rgba(var(--spice-rgb-player), 0.1);
-    border: 1px solid green;
-    border-radius: 0px;
-    margin-right: 10px;
-    max-width: 50% !important;
-    max-height: 50% !important;
-    width: 50%;
-    height: 50%;
-    margin: 4px;
-} */
-
-/* .main-entityHeader-gradient {
-    border: 1px solid blue;
-    width: 100%;
-    border-radius: 10px;
-    margin: 4px; */
-/* }s */
-
-
-/* Make main content cover the header */
-.main-view-container>.os-host {
-    position: absolute;
-    top   : 0px;
-    left  : 0;
-    bottom: 0;
-    right : 0px;
-    /* height: 100%; */
-    /* border-radius: 20px; */
-}
-
- .main-view-container>.os-host>div>div {
-    border-radius: 8px;
-    margin-right: 8px;
-}
-
-.main-view-container {
-    margin-top: 8px;
-}
-
-/* .main-view-container__scroll-node-child>main>div {
-    margin-right: 8px;
-
-} */
-
-/* :root {
-    border: 1px solid rgba(148, 148, 248, 0.486);
-} */
-
-
-
-/* Lyrics background */
-
-.lyrics-lyricsContainer-LyricsContainer,.lyrics-lyrics-container {
-    margin-bottom: -78px !important;
-    margin-top: -64px !important;
-    height: calc(100vh - 87px) !important;
-}
-
-.lyrics-lyricsContainer-LyricsBackground {
-    border-radius: 6px !important;
-    margin: 0;
-}
-
-.lyrics-lyrics-container>div {
-    border-radius: 6px !important;
-}
-
-.lyrics-lyricsContainer-SyncedLyricsPage {
-    margin: 0;
-    border-radius: 30px;
-}
-
-/* .main-entityHeader-background,.main-entityHeader-gradient {
-    border: 1px solid yellow;
-    background-size:50%;
-    border-radius: 30px !important;
-    margin: 4px;
-    height: 10% !important;
-    contain: unset;
-    padding: 10%;
-    background-position: 50% 50% !important;
-
-} */
-
-/* .under-main-view {
-    border: 1px dotted magenta;
-    width: 100%;
-    background-color: rgba(65, 65, 65, 0.438);
-    margin: 2px;
-    display: flex;
-    min-height: 330px !important;
-}
+/*
+Top navbar
 */
-/* .os-host-overflow,.os-host-overflow-y {
-    display:none !important;
-}  */
 
-/* * {
-    border: 1px solid rgba(102, 255, 0, 0.151) !important;
+/* buttons */
+.Root__globalNav .main-globalNav-navLinkActive,
+.main-globalNav-navLink:hover,
+.main-globalNav-searchInputContainer:hover .EvclwLCHlQKv3TaU {
+    color: var(--spice-primary);
+}
+
+
+/* progress bar */
+
+.playback-progressbar div[data-testid*="progress-bar"] {
+    --bg-color: var(--spice-outline-variant);
+    --mg-color: var(--spice-primary);
+    --fg-color: var(--spice-on-surface-variant);
+    --is-active-fg-color: var(--spice-primary);
+}
+
+.playback-progressbar div[data-testid*="progress-label"] {
+    background-color: var(--spice-surface-container-highest);
+    color: var(--spice-on-surface);
+}
+
+
+.main-nowPlayingBar-nowPlayingBar .player-controls {
+    margin-top: 4px;
+}
+
+/* .main-nowPlayingBar-container {
+    background-color: var(--spice-surface-container-highest);
+    border-radius: 8px;
 } */
+
+a:not([data-encore-id]) {
+    color: var(--spice-primary);
+}
+
+.main-entityHeader-container,
+.main-entityHeader-metaDataText {
+    color: var(--spice-on-surface) !important;
+}
+
+.main-entityHeader-metaDataText:not(:first-child):before,
+.kaKrvJHvp0Edrw3h:before {
+    content: unset;
+}
+
+
+/* right side bar about artist gradient */
+
+.main-nowPlayingView-contextItemInfo:before {
+    background: unset;
+}
+
+.main-nowPlayingWidget-coverArt .cover-art,
+.main-nowPlayingView-coverArt .cover-art {
+    background-color: var(--spice-surface);
+}
+
+
+/* playlist scrolled header color tint*/
+.main-topBar-background,
+.main-topBar-background .main-topBar-overlay {
+    --background-base: var(--spice-surface-container-high) !important;
+    background-color: var(--spice-surface-container-high);
+}
+
+.main-trackList-trackListHeader {
+    background: var(--spice-surface) !important;
+}
+
+.main-trackList-trackListHeaderRow {
+    border-bottom: transparent;
+}
+
+.os-scrollbar-handle {
+    border-radius: 4px;
+    width: 8px;
+}
+
+.os-theme-spotify.os-scrollbar {
+    --os-size: 8px;
+    --os-handle-min-size: 30px;
+    --os-handle-bg: var(--spice-outline-variant);
+    --os-handle-bg-hover: var(--spice-outline);
+    --os-handle-bg-active: var(--spice-primary);
+    -webkit-app-region: no-drag;
+    transition: opacity .2s, visibility .2s;
+}
+
+.search-searchCategory-categoryGrid * {
+    --end-gradient-color: rgba(0, 0, 0, 0) !important;
+    --start-gradient-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* Trash icon (trashbin.js) */
+.control-button-heart {
+    color: var(--spice-error) !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    /* overflow: hidden; */
+    outline: none;
+    height: 16px;
+    margin-left: 8px;
+}
+
+
+div[role="alert"] {
+    background-color: var(--spice-surface-container-highest) !important;
+    color: var(--spice-on-surface) !important;
+}
+
+button[data-testid="control-button-playpause"] span {
+    --background-base: var(--spice-primary) !important;
+    --background-highlight: var(--spice-primary) !important;
+}
+
+button[data-testid="control-button-playpause"] svg {
+    fill: var(--spice-surface) !important;
+    /* background-color: red; */
+}
+
+/* scrolled home header */
+
+.main-home-filterChipsContainer>.main-home-filterChipsSectionActive {
+    background-color: var(--spice-surface);
+}
+
+.main-home-filterChipsContainer>.main-home-filterChipsSectionActive::after {
+    background-color: var(--spice-surface);
+}
